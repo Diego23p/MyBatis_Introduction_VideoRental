@@ -43,7 +43,7 @@
 		<result property='direccion' column='direccion'/>
 		<result property='email' column='email'/>
 		<result property='vetado' column='vetado'/>     
-		<collection property='rentados' ofType='ItemRentado' resultMap='ItemRentadoResult'></collection>
+		<collection property='rentados' ofType='ItemRentado' columnPrefix='ir' resultMap='ItemRentadoResult'></collection>
 	</resultMap>
 	
 	<resultMap type='ItemRentado' id='ItemRentadoResult'>
