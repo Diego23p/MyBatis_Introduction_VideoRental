@@ -25,7 +25,9 @@
 		i.fechalanzamiento ,
 		i.tarifaxdia ,
 		i.formatorenta ,
-		i.genero ,        
+		i.genero ,
+
+		
 		ti.id ,
 		ti.descripcion 
 
@@ -43,14 +45,14 @@
 		<result property='direccion' column='direccion'/>
 		<result property='email' column='email'/>
 		<result property='vetado' column='vetado'/>     
-		<collection property='rentados' ofType='ItemRentado' columnPrefix='ir' resultMap='ItemRentadoResult'></collection>
+		<collection property='rentados' ofType='ItemRentado' columnPrefix='ir.' resultMap='ItemRentadoResult'></collection>
 	</resultMap>
 	
 	<resultMap type='ItemRentado' id='ItemRentadoResult'>
 		<id property='id' column='id'/>
 		<result property='fechainiciorenta' column='fechainiciorenta'/>
 		<result property='fechafinrenta' column='fechafinrenta'/>
-		<association property="item" javaType="Item" ></association> 
+		<association property="item" javaType="Item" columnPrefix='i.'></association> 
 	</resultMap>
 	
 	<resultMap type='Item' id='ItemResult'>
@@ -61,7 +63,7 @@
 		<result property='tarifaxdia' column='tarifaxdia'/>
 		<result property='formatorenta' column='formatorenta'/>
 		<result property='genero' column='genero'/>
-		<association property="tipo" javaType="TipoItem" ></association>
+		<association property="tipo" javaType="TipoItem" columnPrefix='ti.'></association>
 	</resultMap>
 	
 	<resultMap type='TipoItem' id='TipoItemResult'>
