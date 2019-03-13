@@ -76,7 +76,7 @@ public class MyBatisExample {
         //System.out.println(cm.consultarCliente(123456));
         
         //insertar item rentado al cliente
-        cm.agregarItemRentadoACliente(123456,2,new Date(2019,02,01),new Date(2019,03,01));
+        cm.agregarItemRentadoACliente(123456,2,new Date(2019,03,04),new Date(2019,03,06));
         
         sqlss.commit();
         sqlss.close();
