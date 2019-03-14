@@ -75,7 +75,7 @@
 	
 	
 	<insert id="agregarItemRentadoACliente" parameterType="map">
-		INSERT INTO VI_ITEMRENTADO (id,ITEMS_id,fechainiciorenta,fechafinrenta) VALUES (#{id},#{idit},#{fein},#{fefi})
+		INSERT INTO VI_ITEMRENTADO (CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta) VALUES (#{id},#{idit},#{fein},#{fefi})
 	</insert>
 	
 	
@@ -97,21 +97,7 @@
 		<association property="item" javaType="Item" ></association> 
 	</resultMap>
 	
-	<resultMap type='Item' id='ItemResult'>
-		<id property='id' column='id'/>
-		<result property='nombre' column='nombre'/>
-		<result property='descripcion' column='descripcion'/>
-		<result property='fechalanzamiento' column='fechalanzamiento'/>
-		<result property='tarifaxdia' column='tarifaxdia'/>
-		<result property='formatorenta' column='formatorenta'/>
-		<result property='genero' column='genero'/>
-		<association property="tipo" javaType="TipoItem" ></association>
-	</resultMap>
-	
-	<resultMap type='TipoItem' id='TipoItemResult'>
-		<id property='id' column='id'/>
-		<result property='descripcion' column='descripcion'/>
-	</resultMap>
 
+	
           	
 </mapper>

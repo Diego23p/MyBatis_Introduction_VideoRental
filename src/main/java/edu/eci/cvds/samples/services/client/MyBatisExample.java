@@ -28,6 +28,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.*;
+import edu.eci.cvds.samples.entities.Item;
+import edu.eci.cvds.samples.entities.TipoItem;
 
 /**
  *
@@ -73,10 +75,21 @@ public class MyBatisExample {
         //System.out.println(cm.consultarClientes());
         
         //por id
-        //System.out.println(cm.consultarCliente(123456));
+        //System.out.println(cm.consultarCliente(123789));
         
         //insertar item rentado al cliente
-        cm.agregarItemRentadoACliente(123456,2,new Date(2019,03,04),new Date(2019,03,06));
+        //cm.agregarItemRentadoACliente(123789,5,new Date(2019,03,04),new Date(2019,03,06));
+        
+        
+        //insertar nuevo item
+        ItemMapper im=sqlss.getMapper(ItemMapper.class);
+        //im.insertarItem(new Item(new TipoItem(1,"deTipo1"), 6,"masa","paisa",new Date(2019,01,04),400,"FormatoNormal","comedia"));
+
+        //Consultar items
+        //System.out.println(im.consultarItems());
+        System.out.println(im.consultarItem(6));
+        
+        
         
         sqlss.commit();
         sqlss.close();
