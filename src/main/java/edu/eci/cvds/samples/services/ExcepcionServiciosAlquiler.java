@@ -8,4 +8,8 @@ public class ExcepcionServiciosAlquiler extends Exception {
 		super(mensaje,ex);
 	}
 
+	public ExcepcionServiciosAlquiler(String mensaje) {
+		super(mensaje);
+	}
+
 }
