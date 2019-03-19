@@ -87,7 +87,7 @@ public class MyBatisExample {
 
         //Consultar items
         //System.out.println(im.consultarItems());
-        System.out.println(im.consultarItem(6));
+        //System.out.println(im.consultarItem(6));
         
         
         
