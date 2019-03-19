@@ -35,6 +35,7 @@ public class ServiciosAlquilerTest {
     public void setUp() {
     }
 
+    
     @Test
     public void emptyDB() {
         qt().forAll(longs().from(1).upTo(1000)).check((documento) -> {
