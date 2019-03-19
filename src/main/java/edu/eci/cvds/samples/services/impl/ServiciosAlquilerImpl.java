@@ -43,23 +43,20 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler {
-	   /*
 	   try {
            return clienteDAO.items((int)idcliente);
        } catch (PersistenceException ex) {
            throw new ExcepcionServiciosAlquiler("Error al consultar el cliente "+idcliente,ex);
-       }*/
-	   throw new UnsupportedOperationException("Not supported yet.");
+       }
    }
 
    @Override
    public List<Cliente> consultarClientes() throws ExcepcionServiciosAlquiler {
-	   /*try {
+	   try {
            return clienteDAO.load();
        } catch (PersistenceException ex) {
            throw new ExcepcionServiciosAlquiler("Error al consultar los clientes",ex);
-       }*/
-	   throw new UnsupportedOperationException("Not supported yet.");
+       }
    }
 
    @Override
@@ -103,7 +100,11 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Override
    public void registrarCliente(Cliente c) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet.");
+	   try {
+           clienteDAO.agregarCliente(c);
+       } catch (PersistenceException ex) {
+           throw new ExcepcionServiciosAlquiler("Error al consultar los clientes",ex);
+       }
    }
 
    @Override
@@ -117,11 +118,19 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    }
    @Override
    public void registrarItem(Item i) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	   try {
+           itemDAO.save(i);
+       } catch (PersistenceException ex) {
+           throw new ExcepcionServiciosAlquiler("Error al consultar los clientes",ex);
+       }
    }
 
    @Override
    public void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	   try {
+           clienteDAO.vetar(docu,estado);
+       } catch (PersistenceException ex) {
+           throw new ExcepcionServiciosAlquiler("Error al consultar los clientes",ex);
+       }
    }
 }
