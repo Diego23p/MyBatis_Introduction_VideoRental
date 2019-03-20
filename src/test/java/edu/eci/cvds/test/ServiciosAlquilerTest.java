@@ -6,6 +6,7 @@ import java.util.List;
 import com.google.inject.Inject;
 import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
@@ -34,6 +35,8 @@ public class ServiciosAlquilerTest {
     public void setUp() {
     }
 
+    
+    
     @Test
     public void emptyDB() {
         qt().forAll(longs().from(1).upTo(1000)).check((documento) -> {
@@ -48,4 +51,22 @@ public class ServiciosAlquilerTest {
             return r;
         });
     }
+    
+    @Test
+    //Consultar item
+    
+    public void emptyItems() {
+        qt().forAll(integers().between(100, 2000)).check((id) -> {
+            boolean r = true;
+            try {
+                Item it = serviciosAlquiler.consultarItem(id);
+            } catch(ExcepcionServiciosAlquiler e) {
+                r = true;
+            } catch(IndexOutOfBoundsException e) {
+                r = true;
+            }
+            return r;
+        });
+    }
+    
 }
