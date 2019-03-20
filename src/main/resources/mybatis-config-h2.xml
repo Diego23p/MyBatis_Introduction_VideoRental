@@ -4,6 +4,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+	<properties resource="test.properties">
+    </properties>
+
    <typeAliases>
        <typeAlias type='edu.eci.cvds.samples.entities.Cliente' alias='Cliente'/>
        <typeAlias type='edu.eci.cvds.samples.entities.Item' alias='Item'/>

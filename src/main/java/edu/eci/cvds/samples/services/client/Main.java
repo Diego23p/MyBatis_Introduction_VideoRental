@@ -11,5 +11,4 @@ public class Main {
 	        System.out.println(ServiciosAlquilerFactory.getInstance().getServiciosAlquiler().consultarCliente(123456));
 	        System.exit(0);
 	 }        
-
 }

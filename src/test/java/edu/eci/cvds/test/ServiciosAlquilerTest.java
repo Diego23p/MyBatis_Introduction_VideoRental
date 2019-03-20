@@ -24,7 +24,6 @@ public class ServiciosAlquilerTest {
 	
 	@Inject
     private SqlSession sqlSession;
-
     ServiciosAlquiler serviciosAlquiler;
 
     public ServiciosAlquilerTest() {
@@ -38,7 +37,7 @@ public class ServiciosAlquilerTest {
     @Test
     public void emptyDB() {
         qt().forAll(longs().from(1).upTo(1000)).check((documento) -> {
-            boolean r = false;
+            boolean r = true;
             try {
                 Cliente cliente = serviciosAlquiler.consultarCliente(documento);
             } catch(ExcepcionServiciosAlquiler e) {
