@@ -25,6 +25,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Inject
    private ItemDAO itemDAO;
+   @Inject
    private ClienteDAO clienteDAO;
 
    @Override
