@@ -1,5 +1,8 @@
 package edu.eci.cvds.sampleprj.dao.mybatis;
 
-public class MyBATISTipoItemDAO {
+import edu.eci.cvds.sampleprj.dao.TipoItemDAO;
+
+public class MyBATISTipoItemDAO implements TipoItemDAO{
 
 }
+

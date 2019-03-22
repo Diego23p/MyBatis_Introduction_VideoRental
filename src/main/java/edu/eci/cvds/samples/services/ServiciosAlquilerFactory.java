@@ -32,8 +32,9 @@ public class ServiciosAlquilerFactory {
 	               setClassPathResource(pathResource);
 	               bind(ItemDAO.class).to(MyBATISItemDAO.class);
 	               bind(ClienteDAO.class).to(MyBATISClienteDAO.class);
-	               //bind(ServiciosAlquiler.class).to(ServiciosAlquilerImpl.class);
-	               bind(ServiciosAlquiler.class).to(ServiciosAlquilerItemsStub.class);
+	               bind(TipoItemDAO.class).to(MyBATISTipoItemDAO.class);
+	               bind(ServiciosAlquiler.class).to(ServiciosAlquilerImpl.class);
+	               //bind(ServiciosAlquiler.class).to(ServiciosAlquilerItemsStub.class);
 	           }
 	       });
 	   }

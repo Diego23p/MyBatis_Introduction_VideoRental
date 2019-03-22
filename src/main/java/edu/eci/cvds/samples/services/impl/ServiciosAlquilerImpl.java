@@ -27,6 +27,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    private ItemDAO itemDAO;
    @Inject
    private ClienteDAO clienteDAO;
+   
 
    @Override
    public int valorMultaRetrasoxDia(int itemId) throws ExcepcionServiciosAlquiler {

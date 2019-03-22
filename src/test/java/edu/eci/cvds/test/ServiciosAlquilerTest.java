@@ -35,7 +35,11 @@ public class ServiciosAlquilerTest {
     public void setUp() {
     }
 
-    
+    @Test
+    public void asdas() {
+    	serviciosAlquiler.getClass();
+    	
+    }
     
     @Test
     public void emptyDB() {

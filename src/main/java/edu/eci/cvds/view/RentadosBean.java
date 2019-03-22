@@ -21,21 +21,19 @@ import edu.eci.cvds.samples.services.ServiciosAlquiler;
 
 
 public class RentadosBean extends BasePageBean{
-	/**
-	 * 
-	 */
+	
+	@Inject
+	private ServiciosAlquiler serviciosalquiler;
+
 	private static final long serialVersionUID = 1L;
-	@ManagedProperty(value = "#{param.document}")
+	////@ManagedProperty(value = "#{param.document}")
+	
 	private long document;
-	/**
-	 * 
-	 */
 	private int iditem;
 	private int numdias;
 	private long costo;
 	private Cliente cliente;
-	@Inject
-	private ServiciosAlquiler serviciosalquiler;
+	
 	
 	
 	public List<ItemRentado> getAlquilados() throws Exception{

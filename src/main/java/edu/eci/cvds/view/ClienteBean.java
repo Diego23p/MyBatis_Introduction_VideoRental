@@ -1,5 +1,6 @@
 package edu.eci.cvds.view;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
@@ -13,22 +14,18 @@ import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
+import edu.eci.cvds.samples.services.ServiciosAlquilerFactory;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "clienteBean")
 @SessionScoped
 
 
-public class ClienteBean extends BasePageBean {
+public class ClienteBean extends BasePageBean implements Serializable{
+	
+	//private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-
-	@Inject
-	private ServiciosAlquiler serviciosalquiler;
+	ServiciosAlquiler serviciosalquiler=ServiciosAlquilerFactory.getInstance().getServiciosAlquiler();
 	
 	private String nombre,telefono,direccion,email;
 	private long documento;
